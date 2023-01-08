@@ -1,6 +1,13 @@
 # rommyarb-builder.io
 
-## Build Setup
+## Builder.io Setup
+1. Rename file <b>.env.example</b> menjadi <b>.env</b> kemudian edit,
+2. Masukkan public api key builder.io Anda ke variabel BUILDER_IO_API_KEY:
+```
+BUILDER_IO_API_KEY=123456abcdefg
+```
+
+## Nuxt.js Setup
 
 ```bash
 # install dependencies
