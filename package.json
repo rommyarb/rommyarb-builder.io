@@ -16,5 +16,8 @@
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/vercel-builder": "^0.24.0"
+  }
 }
