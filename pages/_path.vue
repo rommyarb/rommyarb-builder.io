@@ -10,6 +10,11 @@ export default {
   data: () => ({
     notFound: false,
   }),
+  computed: {
+    path() {
+      return this.$route.params.path;
+    },
+  },
   components: { RenderContent },
   methods: {
     contentLoaded(content) {
@@ -19,11 +24,11 @@ export default {
         }
         this.notFound = true;
       } else {
-        console.log("CONTENT:", content);
+        console.log("✅ CONTENT LOADED:", content);
       }
     },
     contentError(err) {
-      console.log("CONTENT LOAD ERROR:", err);
+      console.error("❌ ERROR LOADING CONTENT:", err);
     },
     getRegisteredComponents() {
       return REGISTERED_COMPONENTS;
@@ -35,14 +40,16 @@ export default {
 <template>
   <div>
     <RenderContent
+      v-if="!notFound"
       :key="$route.path"
       model="page"
       @contentLoaded="contentLoaded"
       @contentError="contentError"
       :options="{
-        url: $route.path,
+        url: path,
       }"
       :customComponents="getRegisteredComponents"
     />
+    <div v-else>404 Page not found</div>
   </div>
 </template>
