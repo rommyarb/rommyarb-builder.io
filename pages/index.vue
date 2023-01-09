@@ -2,7 +2,8 @@
 import { builder, RenderContent } from "@builder.io/vue";
 import { REGISTERED_COMPONENTS } from "../utils/init-builder";
 
-builder.init(process.env.BUILDER_IO_API_KEY);
+// builder.init(process.env.BUILDER_IO_API_KEY); // entah knp, di vercel gk ke-detect, pdhl udh ditambakan env var di vercel.
+builder.init("1b7eeb03c2dc4d46a05a805ff5a7824f");
 
 export default {
   name: "Home",
