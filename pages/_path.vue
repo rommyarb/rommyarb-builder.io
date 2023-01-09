@@ -10,11 +10,7 @@ export default {
   data: () => ({
     notFound: false,
   }),
-  computed: {
-    path() {
-      return this.$route.params.path;
-    },
-  },
+  computed: {},
   components: { RenderContent },
   methods: {
     contentLoaded(content) {
@@ -46,10 +42,10 @@ export default {
       @contentLoaded="contentLoaded"
       @contentError="contentError"
       :options="{
-        url: path,
+        url: $route.path,
       }"
       :customComponents="getRegisteredComponents"
     />
-    <div v-else>404 Page not found</div>
+    <div v-else><p>404 Page not found</p></div>
   </div>
 </template>
